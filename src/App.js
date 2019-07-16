@@ -1,10 +1,23 @@
 import React from 'react';
+import {Router} from '@reach/router';
+import Home from "./components/pages/Home";
+import Login from "./components/pages/Login";
+import Register from "./components/pages/Register";
+import Burgers from "./components/pages/Burgers";
+import Header from "./components/shared/Header";
 
 function App() {
   return (
-    <>
-      <h1>Food State fo Mind</h1>
-    </>
+      <>
+        <Header/>
+        <Router>
+          <Login path={'/'}/>
+          <Register path={'/register'}/>
+
+          <Home path={'/home'}/>
+          <Burgers path={'/burgers'}/>
+        </Router>
+      </>
   );
 }
 
