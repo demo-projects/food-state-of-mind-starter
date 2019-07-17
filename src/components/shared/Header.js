@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import {StyledLink} from "./StyledLink";
+import {useAuth} from "../../redux/selectors/useAuth";
+
 
 const Header = () => {
+  const {currentUser, logout} = useAuth();
 
   return (
       <HeaderContainer>
-        <div>Places to eat for <UserName>Nir Kaufman</UserName></div>
-        <StyledLink to={'/'}>Logout</StyledLink>
+        <div>Places to eat for <UserName>{currentUser.name}</UserName></div>
+        <StyledLink to={'/'} onClick={logout}>Logout</StyledLink>
       </HeaderContainer>
   );
 };

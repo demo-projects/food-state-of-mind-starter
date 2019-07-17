@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 import {FormContainer, PageContainer} from "../shared/Layout";
 import {StyledLink} from "../shared/StyledLink";
+import {useAuth} from "../../redux/selectors/useAuth";
 
 const Login = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const {login} = useAuth();
+
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
 
   return (
       <PageContainer>
@@ -18,8 +21,8 @@ const Login = () => {
                  placeholder={"Your password..."}
                  onChange={({target}) => setPassword(target.value)}/>
 
+          <button onClick={() => login({name: 'Nir Kaufman'})}>Login</button>
 
-          <button>Login</button>
           <p>don't have an account? <StyledLink to={'/register'}>Register</StyledLink></p>
         </FormContainer>
       </PageContainer>
