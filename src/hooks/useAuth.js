@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import {AuthContext} from "../providers/AuthContextProvider";
+import {StoreContext} from "../context/Store";
 
 export const LOGIN = '[AUTH] LOGIN';
 export const LOGOUT = '[AUTH] LOGOUT';
@@ -18,7 +18,7 @@ export function signOut() {
 }
 
 export function useAuth() {
-  const {state, dispatch} = useContext(AuthContext);
+  const {state, dispatch} = useContext(StoreContext);
 
   const login = ({email, password, name}) => {
     dispatch(signIn({email, password, name}))
