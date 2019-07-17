@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import {StyledLink} from "./StyledLink";
+import {useCurrentUser} from "../../hooks/useCurrentUser";
 
-const Header = () => {
+const Header = ({user}) => {
+  const {signOut} = useCurrentUser();
 
   return (
       <HeaderContainer>
-        <div>Places to eat for <UserName>Nir Kaufman</UserName></div>
-        <StyledLink to={'/'}>Logout</StyledLink>
+        <div>Places to eat for <UserName>{user.name}</UserName></div>
+        <StyledLink onClick={signOut} to={'/'}>Logout</StyledLink>
       </HeaderContainer>
   );
 };

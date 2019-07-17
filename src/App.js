@@ -5,11 +5,15 @@ import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
 import Burgers from "./components/pages/Burgers";
 import Header from "./components/shared/Header";
+import {useSelector} from "react-redux";
+import {useCurrentUser} from "./hooks/useCurrentUser";
 
 function App() {
+  const {user} = useCurrentUser();
+
   return (
       <>
-        <Header/>
+        {user && <Header user={user}/>}
         <Router>
           <Login path={'/'}/>
           <Register path={'/register'}/>
