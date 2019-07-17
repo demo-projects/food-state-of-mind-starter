@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import {StyledLink} from "./StyledLink";
-import {useAuth} from "../../redux/selectors/useAuth";
-
+import {useAuth} from "../../hooks/useAuth";
 
 const Header = () => {
   const {currentUser, logout} = useAuth();

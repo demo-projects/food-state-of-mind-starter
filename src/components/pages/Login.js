@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {FormContainer, PageContainer} from "../shared/Layout";
 import {StyledLink} from "../shared/StyledLink";
-import {useAuth} from "../../redux/selectors/useAuth";
+import {useAuth} from "../../hooks/useAuth";
 
 const Login = () => {
   const {login} = useAuth();

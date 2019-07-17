@@ -5,7 +5,7 @@ import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
 import Burgers from "./components/pages/Burgers";
 import Header from "./components/shared/Header";
-import {useAuth} from "./redux/selectors/useAuth";
+import {useAuth} from "./hooks/useAuth";
 
 function App() {
   const {currentUser} = useAuth();
